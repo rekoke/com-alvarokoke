@@ -12,7 +12,10 @@ class App extends Component {
                 alvaro
               </div>
               <div className="App__container__left__name__down">
-                koke
+                <span>k</span>
+                <span>o</span>
+                <span>k</span>
+                <span>e</span>
               </div>
             </div>
             <div className="App__container__left__description">

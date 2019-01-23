@@ -58,11 +58,16 @@ html
         &__down
           transition opacity .3s linear
           font-size 9rem
-          opacity .45
+          opacity .6
           color #FFE900
           letter-spacing -3px
           position relative
           z-index 2
+          span
+            transition opacity .3s
+            opacity .85
+            &:hover
+              opacity 1
       &__description
         transition color .3s linear, opacity .3s linear
         margin-top 80px
@@ -76,7 +81,7 @@ html
             &__up
               opacity 0.65
             &__down
-              opacity .8
+              opacity .85
           &__description
             color: #FFE900
             opacity .8
