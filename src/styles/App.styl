@@ -1,6 +1,7 @@
 html
   background-color #233D4D
 .App
+  font-family 'Montserrat-Light'
   text-align center
   color #45CB85
   text-transform uppercase
@@ -25,9 +26,73 @@ html
     background-color #233D4D
     z-index 1
     padding 20vh 0
+    display flex
+    width 100vw
+    &__left,
+    &__right
+      flex-basis 50%
+    &__left
+      text-align right
+      padding-right 10px
+      height 200px
+      display flex
+      align-items flex-end
+      justify-content center
+      flex-direction column
+      padding 20px
+      box-sizing border-box
+      user-select none
+      &__name
+        font-family 'Anton-Regular'
+        font-size 4rem
+        line-height 2px
+        position relative
+        margin-top 65px
+        &__up
+          transition opacity .3s linear
+          font-size 6rem
+          letter-spacing -3px
+          opacity 1
+          position relative
+          z-index 1
+        &__down
+          transition opacity .3s linear
+          font-size 9rem
+          opacity .45
+          color #FFE900
+          letter-spacing -3px
+          position relative
+          z-index 2
+      &__description
+        transition color .3s linear, opacity .3s linear
+        margin-top 80px
+        font-size 18px
+        font-weight bold
+        color #45CB85
+        opacity 1
+      &:hover
+        .App__container__left
+          &__name
+            &__up
+              opacity 0.65
+            &__down
+              opacity .8
+          &__description
+            color: #FFE900
+            opacity .8
+    &__right
+      text-align left
+      padding-left 10px
+      display flex
+      align-items center
   @media (min-width: 1023px)
     font-size 2rem
     &__container
       padding 35vh 0
-
+@font-face
+  font-family 'Anton-Regular'
+  src local('Anton-Regular'), url(./fonts/Anton-Regular.ttf) format('truetype')
+@font-face
+  font-family 'Montserrat-Light'
+  src local('Montserrat-Light'), url(./fonts/Montserrat-Light.ttf) format('truetype')
 
