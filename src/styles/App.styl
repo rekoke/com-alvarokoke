@@ -1,0 +1,33 @@
+html
+  background-color #233D4D
+.App
+  text-align center
+  color #45CB85
+  text-transform uppercase
+  height 100vh
+  width 100vw
+  background-color #233D4D
+  font-size 1.5rem
+  display flex
+  align-items center
+  justify-content center
+  letter-spacing 2px
+  padding 5%
+  box-sizing border-box
+  &:before
+    content ''
+    height 100vh
+    background-color #45CB85
+    width 3px
+    display block
+    position absolute
+  &__container
+    background-color #233D4D
+    z-index 1
+    padding 20vh 0
+  @media (min-width: 1023px)
+    font-size 2rem
+    &__container
+      padding 35vh 0
+
+
