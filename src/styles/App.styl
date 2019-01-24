@@ -15,14 +15,8 @@ html
   letter-spacing 2px
   padding 5%
   box-sizing border-box
-  &:before
-    content ''
-    height 100vh
-    background-color #45CB85
-    width 3px
-    display block
-    position absolute
   &__container
+    align-items center
     background-color #233D4D
     z-index 1
     padding 20vh 0
@@ -34,12 +28,11 @@ html
     &__left
       text-align right
       padding-right 10px
-      height 200px
+      height 220px
       display flex
       align-items flex-end
       justify-content center
       flex-direction column
-      padding 20px
       box-sizing border-box
       user-select none
       &__name
@@ -47,7 +40,7 @@ html
         font-size 4rem
         line-height 2px
         position relative
-        margin-top 65px
+        margin-top 82px
         &__up
           transition opacity .3s linear
           font-size 6rem
@@ -55,14 +48,18 @@ html
           opacity 1
           position relative
           z-index 1
+          margin-top 9px
+          text-align center
         &__down
           transition opacity .3s linear
-          font-size 9rem
+          font-size 12rem
           opacity .6
           color #FFE900
-          letter-spacing -3px
+          letter-spacing -17px
           position relative
           z-index 2
+          margin-right 7px
+          margin-top 0px
           span
             transition opacity .3s
             opacity .85
@@ -70,26 +67,76 @@ html
               opacity 1
       &__description
         transition color .3s linear, opacity .3s linear
-        margin-top 80px
-        font-size 18px
-        font-weight bold
+        margin-top 100px
+        font-size 22px
         color #45CB85
         opacity 1
+        margin-right -6px
       &:hover
-        .App__container__left
-          &__name
-            &__up
-              opacity 0.65
-            &__down
-              opacity .85
-          &__description
-            color: #FFE900
-            opacity .8
+        .App__container
+          &__left
+            &__name
+              &__up
+                opacity 0.65
+              &__down
+                opacity .85
+            &__description
+              color: #FFE900
+              opacity .8
     &__right
       text-align left
       padding-left 10px
+      margin-left 20px
       display flex
-      align-items center
+      align-items flex-start
+      flex-direction column
+      border-left 1px solid #45CB85
+      opacity 1
+      font-size 1.2rem
+      span
+        transition letter-spacing .1s linear
+        display flex
+        align-items center
+        color rgba(255, 237, 46, 0.85)
+        margin 5px 20px
+        cursor pointer
+        font-weight inherit
+        letter-spacing inherit
+        &:first-child
+          margin-top 0
+          a
+            span
+              margin-top 0
+            span:first-child
+              top 2px
+        &:last-child
+          margin-bottom 0
+        a
+          display flex
+          align-items center
+          color inherit
+          text-decoration none
+          position relative
+          span:first-child
+            transition opacity .1s ease-out 0s
+            position absolute
+            opacity 0
+            align-items center
+            justify-content center
+            margin-left 0
+            display flex
+            font-size 20px
+            top 7px
+          span:nth-child(2)
+            transition margin-left .2s linear
+            margin-left 0
+        &:hover
+          letter-spacing 3px
+          span:first-child
+            transition opacity .2s ease-out .1s
+            opacity 1
+          span:nth-child(2)
+            margin-left 30px
   @media (min-width: 1023px)
     font-size 2rem
     &__container
@@ -100,4 +147,6 @@ html
 @font-face
   font-family 'Montserrat-Light'
   src local('Montserrat-Light'), url(./fonts/Montserrat-Light.ttf) format('truetype')
-
+@font-face
+  font-family 'alvarokoke'
+  src local('alvarokoke'), url(./fonts/alvarokoke.ttf) format('truetype')

@@ -17,15 +17,8 @@ html {
   padding: 5%;
   box-sizing: border-box;
 }
-.App:before {
-  content: '';
-  height: 100vh;
-  background-color: #45cb85;
-  width: 3px;
-  display: block;
-  position: absolute;
-}
 .App__container {
+  align-items: center;
   background-color: #233d4d;
   z-index: 1;
   padding: 20vh 0;
@@ -39,12 +32,11 @@ html {
 .App__container__left {
   text-align: right;
   padding-right: 10px;
-  height: 200px;
+  height: 220px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
   box-sizing: border-box;
   user-select: none;
 }
@@ -53,7 +45,7 @@ html {
   font-size: 4rem;
   line-height: 2px;
   position: relative;
-  margin-top: 65px;
+  margin-top: 82px;
 }
 .App__container__left__name__up {
   transition: opacity 0.3s linear;
@@ -62,15 +54,19 @@ html {
   opacity: 1;
   position: relative;
   z-index: 1;
+  margin-top: 9px;
+  text-align: center;
 }
 .App__container__left__name__down {
   transition: opacity 0.3s linear;
-  font-size: 9rem;
+  font-size: 12rem;
   opacity: 0.6;
   color: #ffe900;
-  letter-spacing: -3px;
+  letter-spacing: -17px;
   position: relative;
   z-index: 2;
+  margin-right: 7px;
+  margin-top: 0px;
 }
 .App__container__left__name__down span {
   transition: opacity 0.3s;
@@ -81,11 +77,11 @@ html {
 }
 .App__container__left__description {
   transition: color 0.3s linear, opacity 0.3s linear;
-  margin-top: 80px;
-  font-size: 18px;
-  font-weight: bold;
+  margin-top: 100px;
+  font-size: 22px;
   color: #45cb85;
   opacity: 1;
+  margin-right: -6px;
 }
 .App__container__left:hover .App__container__left__name__up {
   opacity: 0.65;
@@ -100,8 +96,67 @@ html {
 .App__container__right {
   text-align: left;
   padding-left: 10px;
+  margin-left: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border-left: 1px solid #45cb85;
+  opacity: 1;
+  font-size: 1.2rem;
+}
+.App__container__right span {
+  transition: letter-spacing 0.1s linear;
   display: flex;
   align-items: center;
+  color: rgba(255,237,46,0.85);
+  margin: 5px 20px;
+  cursor: pointer;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+.App__container__right span:first-child {
+  margin-top: 0;
+}
+.App__container__right span:first-child a span {
+  margin-top: 0;
+}
+.App__container__right span:first-child a span:first-child {
+  top: 2px;
+}
+.App__container__right span:last-child {
+  margin-bottom: 0;
+}
+.App__container__right span a {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+.App__container__right span a span:first-child {
+  transition: opacity 0.1s ease-out 0s;
+  position: absolute;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  display: flex;
+  font-size: 20px;
+  top: 7px;
+}
+.App__container__right span a span:nth-child(2) {
+  transition: margin-left 0.2s linear;
+  margin-left: 0;
+}
+.App__container__right span:hover {
+  letter-spacing: 3px;
+}
+.App__container__right span:hover span:first-child {
+  transition: opacity 0.2s ease-out 0.1s;
+  opacity: 1;
+}
+.App__container__right span:hover span:nth-child(2) {
+  margin-left: 30px;
 }
 @media (min-width: 1023px) {
   .App {
@@ -118,4 +173,8 @@ html {
 @font-face {
   font-family: 'Montserrat-Light';
   src: local('Montserrat-Light'), url("./fonts/Montserrat-Light.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'alvarokoke';
+  src: local('alvarokoke'), url("./fonts/alvarokoke.ttf") format('truetype');
 }
