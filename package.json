@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "concurrently": "^4.1.0",
+    "firebase": "^5.8.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-ga": "^2.5.6",
