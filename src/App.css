@@ -2,6 +2,7 @@ html {
   background-color: #233d4d;
 }
 .App {
+  user-select: none;
   font-family: 'Montserrat-Light';
   text-align: center;
   color: #45cb85;
@@ -70,6 +71,7 @@ html {
   z-index: 2;
   margin-right: 7px;
   margin-top: 0px;
+  user-select: none;
 }
 .App__container__left__name__down span {
   transition: opacity 0.3s;
