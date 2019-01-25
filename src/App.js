@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import './App.css';
+import {SOCIAL_NETWORKS} from './constants.js'
 ReactGA.initialize('UA-133167935-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   render() {
+    const links = SOCIAL_NETWORKS.map((network) => (
+      <span>
+        <a
+          href={network.url}
+          target={network.target || '_blank'}
+          onClick={() => ReactGA.ga('send', 'event', `${network.text}`, 'click', 'home', 0)}
+        >
+          <span className={network.icon}></span>
+          <span>{network.text}</span>
+        </a>
+      </span>
+    ));
     return (
       <div className="App">
         <div className="App__container">
@@ -26,12 +39,7 @@ class App extends Component {
             </div>
           </div>
           <div className="App__container__right">
-            <span><a href="mailto:rekoke92@gmail.com?Subject=Hello koke" target="_top" onClick={() => ReactGA.ga('send', 'event', 'mail', 'click', 'home', 0)}><span className="icon-mail"></span><span>emailme</span></a></span>
-            <span><a href="https://www.linkedin.com/in/alvaro-de-frutos-cabrero" rel="noopener noreferrer" target="_blank" onClick={() => ReactGA.ga('send', 'event', 'linkedin', 'click', 'home', 0)}><span className="icon-linkedin"></span><span>linkedIn</span></a></span>
-            <span><a href="https://github.com/rekoke" rel="noopener noreferrer" target="_blank" onClick={() => ReactGA.ga('send', 'event', 'github', 'click', 'home', 0)}><span className="icon-github"></span><span>github</span></a></span>
-            <span><a href="https://www.instagram.com/kokensaimada/?hl=es" rel="noopener noreferrer" target="_blank" onClick={() => ReactGA.ga('send', 'event', 'instagram', 'click', 'home', 0)}><span className="icon-instagram"></span><span>instagram</span></a></span>
-            <span><a href="https://codepen.io/rekoke/" rel="noopener noreferrer" target="_blank" onClick={() => ReactGA.ga('send', 'event', 'codepen', 'click', 'home', 0)}><span className="icon-codepen"></span><span>codepen</span></a></span>
-            <span><a href="https://open.spotify.com/user/kokespot?si=v72P6YFwSN6B6tmnHsNMSg" rel="noopener noreferrer" target="_blank" onClick={() => ReactGA.ga('send', 'event', 'spotify', 'click', 'home', 0)}><span className="icon-spotify"></span><span>spotify</span></a></span>
+            {links}
           </div>
         </div>
       </div>
