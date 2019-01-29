@@ -159,6 +159,8 @@ html {
   bottom: 10px;
   font-size: 12px;
   letter-spacing: 0px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 @media (min-width: 1025px) {
   .App {
@@ -201,6 +203,14 @@ html {
   }
   .App__container__right span:hover span:nth-child(2) {
     margin-left: 30px;
+  }
+  .App__container__down {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 0px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @font-face {
