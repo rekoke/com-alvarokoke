@@ -1,12 +1,13 @@
 import * as firebase from 'firebase';
+import { DB_KEYS } from './keys';
 
 let config = {
-    apiKey: "AIzaSyD8IG8GmgNtdH_cJTjM7a652dIb4Jv1xC4",
-    authDomain: "com-alvarokoke-e9067.firebaseapp.com",
-    databaseURL: "https://com-alvarokoke-e9067.firebaseio.com",
-    projectId: "com-alvarokoke-e9067",
-    storageBucket: "com-alvarokoke-e9067.appspot.com",
-    messagingSenderId: "402881414981"
+    apiKey: DB_KEYS.API_KEY,
+    authDomain: DB_KEYS.AUTH_DOMAIN,
+    databaseURL: DB_KEYS.DATABASE_URL,
+    projectId: DB_KEYS.PROJECT_ID,
+    storageBucket: DB_KEYS.STORAGE_BUCKET,
+    messagingSenderId: DB_KEYS.MESSAGING_SENDERID,
 };
 firebase.initializeApp(config);
 

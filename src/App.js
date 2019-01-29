@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import './App.css';
-import {SOCIAL_NETWORKS} from './constants.js';
+import { SOCIAL_NETWORKS } from './constants.js';
 import firebase from './Firebase.js'  
 ReactGA.initialize('UA-133167935-1');
 ReactGA.pageview(window.location.pathname + window.location.search);

@@ -8,6 +8,7 @@
 .firebaserc
 firebase.json
 public/404.html
+src/keys.js
 
 # testing
 /coverage
@@ -26,3 +27,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
+
