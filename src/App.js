@@ -9,16 +9,16 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 class App extends Component {
   constructor(){
     super();
-    this.database = firebase.database().ref().child('name');
+    this.database = firebase.database().ref().child('footer_location');
     this.state = {
-      name: 'alvaro'
+      footer_location: 'uluwatu'
     }
   }
 
   componentDidMount(){
     this.database.on('value', snap => {
       this.setState({
-        name: snap.val()
+        footer_location: snap.val()
       });
     });
   }
@@ -43,7 +43,7 @@ class App extends Component {
           <div className="App__container__left">
             <div className="App__container__left__name">
               <div className="App__container__left__name__up">
-                {this.state.name}
+                alvaro
               </div>
               <div className="App__container__left__name__down">
                 <span>k</span>
@@ -58,6 +58,9 @@ class App extends Component {
           </div>
           <div className="App__container__right">
             {links}
+          </div>
+          <div className="App__container__down">
+            made with love in {this.state.footer_location}
           </div>
         </div>
       </div>
