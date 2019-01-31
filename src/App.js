@@ -11,7 +11,7 @@ class App extends Component {
     super();
     this.database = firebase.database().ref().child('footer_location');
     this.state = {
-      footer_location: 'uluwatu'
+      footer_location: 'uluws'
     }
   }
 
