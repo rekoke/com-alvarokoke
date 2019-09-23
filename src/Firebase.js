@@ -1,4 +1,5 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 import { DB_KEYS } from './keys';
 
 let config = {
@@ -9,6 +10,10 @@ let config = {
     storageBucket: DB_KEYS.STORAGE_BUCKET,
     messagingSenderId: DB_KEYS.MESSAGING_SENDERID,
 };
-firebase.initializeApp(config);
 
-export default firebase;
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+}
+const db = firebase.firestore();
+export default db;
+

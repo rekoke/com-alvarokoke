@@ -2,28 +2,29 @@ import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import './App.css';
 import { SOCIAL_NETWORKS } from './constants.js';
-import firebase from './Firebase.js'  
+import db from './Firebase.js'  
 ReactGA.initialize('UA-133167935-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   constructor(){
     super();
-    this.database = firebase.database().ref().child('footer_location');
     this.state = {
-      footer_location: 'uluws'
+      footer: []
     }
   }
 
-  componentDidMount(){
-    this.database.on('value', snap => {
-      this.setState({
-        footer_location: snap.val()
-      });
+  componentDidMount() {
+    db.collection('home').onSnapshot(res => {
+      const changes = res.docChanges();
+      changes.forEach(change => {
+        this.setState({ footer: change.doc.data().footer });
+      })
     });
   }
 
   render() {
+    const footerLocation = this.state.footer;
     const links = SOCIAL_NETWORKS.map((network) => (
       <span>
         <a
@@ -59,9 +60,12 @@ class App extends Component {
           <div className="App__container__right">
             {links}
           </div>
-          <div className="App__container__down">
-            made with love in {this.state.footer_location}
-          </div>
+          {
+            footerLocation.length > 0 &&
+              <div className="App__container__down">
+              made with love in {this.state.footer}
+              </div>
+          }
         </div>
       </div>
     );
