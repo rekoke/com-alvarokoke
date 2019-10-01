@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'kokeicons';
+    src: url('/fonts/kokeicons.eot');
+    src: url('/fonts/kokeicons.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/kokeicons.woff') format('woff'),
+         url('/fonts/kokeicons.ttf') format('truetype'),
+         url('/fonts/kokeicons.svg#kokeicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class*='icon-']:before{
+	display: inline-block;
+   font-family: 'kokeicons';
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+}
+.icon-linkedin:before{
+    content:'\0041';
+}
+.icon-github:before{
+    content:'\0042';
+}
+.icon-instagram:before{
+    content:'\0043';
+}

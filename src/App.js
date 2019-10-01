@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactGA from 'react-ga';
 import './App.css';
 import { SOCIAL_NETWORKS } from './constants.js';
-import db from './Firebase.js'  
+import db from './Firebase.js'
+import Background from './views/background.js'
 ReactGA.initialize('UA-133167935-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -33,15 +34,16 @@ class App extends Component {
           onClick={() => ReactGA.ga('send', 'event', `${network.text}`, 'click', 'home', 0)}
         >
           <span className={network.icon}></span>
-          <span>{network.text}</span>
         </a>
       </span>
     ));
 
     return (
       <div className="App">
+        <Background links= {links} />
         <div className="App__container">
           <div className="App__container__left">
+            <div> hello i am</div>
             <div className="App__container__left__name">
               <div className="App__container__left__name__up">
                 alvaro
@@ -53,17 +55,12 @@ class App extends Component {
                 <span>e</span>
               </div>
             </div>
-            <div className="App__container__left__description">
-              frontend and UX/UI
-            </div>
-          </div>
-          <div className="App__container__right">
-            {links}
+            <div className="App__container__left__description">and i design & develop digital products</div>
           </div>
           {
             footerLocation.length > 0 &&
               <div className="App__container__down">
-              made with love in {this.state.footer}
+              currently in {this.state.footer}
               </div>
           }
         </div>
