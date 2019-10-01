@@ -35,7 +35,7 @@ html {
   height: 100vh;
   width: 100vw;
   background-color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +52,7 @@ html {
   z-index: 3;
   display: flex;
   width: 100vw;
+  margin-top: -20vh;
 }
 .App__container__left {
   text-align: right;
@@ -100,7 +101,6 @@ html {
   justify-content: center;
   line-height: 12rem;
   width: 18rem;
-  margin-top: -2.2rem;
   margin-top: -46px;
 }
 .App__container__left__name__down span {
@@ -143,6 +143,7 @@ html {
 .App__container__left__description {
   line-height: 40px;
   text-align: center;
+  padding: 0px 10px;
 }
 .App__container__down {
   position: absolute;
@@ -193,6 +194,9 @@ html {
   .App {
     font-size: 1.5rem;
   }
+  .App__container {
+    margin-top: 0;
+  }
   .App__container__left {
     flex-direction: row;
     border-bottom: none;
@@ -212,6 +216,7 @@ html {
   .App__container__left__name__down {
     font-size: 12rem;
     margin-top: 0px;
+    margin-top: -2.2rem;
   }
 }
 @-moz-keyframes pulse {
